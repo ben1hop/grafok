@@ -9,18 +9,29 @@ void Graph::GraphAsMatrix::deleteNode(const int& node) {
 }
 
 void Graph::GraphAsMatrix::addEdge(const int& from, const int& to) {
-	auto i = std::find(graph.nodes.begin(), graph.nodes.end(), from);
-	auto j = std::find(graph.nodes.begin(), graph.nodes.end(), to);
+	//auto i = std::find(graph.nodes.begin(), graph.nodes.end(), from);
+	//auto j = std::find(graph.nodes.begin(), graph.nodes.end(), to);
 
-	if (i == graph.nodes.end() || j == graph.nodes.end())
+	//if (i == graph.nodes.end() || j == graph.nodes.end())
+	//	throw std::invalid_argument("Edge creation: non exisiting node.");
+	//graph.currentEdgeCount++;
+	//matrix->setValue(i - graph.nodes.begin(), j - graph.nodes.begin(), 1);
+
+	int i = graph.nodes->findIndex(from);
+	int j = graph.nodes->findIndex(to);
+
+	if (i == -1 || j == -1)
 		throw std::invalid_argument("Edge creation: non exisiting node.");
 
 	graph.currentEdgeCount++;
-	matrix->setValue(i - graph.nodes.begin(), j - graph.nodes.begin(), 1);
+	matrix->setValue(i, j, 1);
+
 }
 
 void Graph::AddNode(const int node) {
-	nodes.push_back(node);
+	if (nodes->findIndex(node) != -1)
+		throw std::invalid_argument("Exisiting node.");
+	nodes->append(node);
 	if (this->usedRep == Both) {
 		_instanceM->addNode(node);
 		_instanceL->addNode(node);

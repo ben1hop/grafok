@@ -15,10 +15,17 @@ Graph::Graph(GraphRepresentation rep, GraphType type) :
 		_instanceL = createMatrixList();
 		break;
 	}
+
+	nodes = new LinkedList();
 	// c++11-es array size lekerdezes
 	//if (std::extent<decltype(nodes)>::value > ACCEPTABLE_NODE_LIMIT)
 	//	throw std::invalid_argument("Higher node count than acceptable.");
 	//else {
 		//currentNodeCount = std::extent<decltype(nodes)>::value;			
 	//}	
+}
+
+
+Graph::~Graph() {
+	delete nodes;
 }

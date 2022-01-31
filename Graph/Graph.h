@@ -8,6 +8,7 @@
 #include <algorithm>
 #include "IGraphOperation.h"
 #include "Matrix.hpp"
+#include "LinkedList.hpp"
 
 const int ACCEPTABLE_NODE_LIMIT = 128;
 
@@ -20,6 +21,7 @@ private:
 */
 #pragma region Graph Representations
 	class GraphAsMatrix : IGraphOperations {
+
 		typedef Matrix Matrix;
 		typedef Matrix* MatrixPointer; // lokalis matrix tipus definicio
 		Graph& graph; // referencia a birtokos graph objektumra	
@@ -70,8 +72,8 @@ public:
 	typedef GraphAsList* ListRepPointer;
 
 	// csak egy begyazott peldanyra mutathatnak es a konstruktorban seteljuk
-	MatrixRepPointer _instanceM = NULL;
-	ListRepPointer _instanceL = NULL;
+	MatrixRepPointer _instanceM = nullptr;
+	ListRepPointer _instanceL = nullptr;
 
 	inline const int GetNodeCount() const { return currentNodeCount; }
 
@@ -92,10 +94,10 @@ public:
 	void AddEdge(const int from, const int to);
 
 	Graph(GraphRepresentation rep = Both, GraphType type = Undirected);
-
-
+	~Graph();
+	
 private:
-	std::vector<int> nodes; // TODO lista vector helyett (konnyu resize , nemkell specifikus index mivel mindig vegiglepkedunk rajta)
+	LinkedList* nodes;
 
 	int currentNodeCount;
 	int currentEdgeCount;
@@ -104,7 +106,6 @@ private:
 
 	MatrixRepPointer createMatrixGraph() { return new GraphAsMatrix(*this); }
 	ListRepPointer createMatrixList() { return new GraphAsList(*this); }
-
 
 };
 

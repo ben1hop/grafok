@@ -42,34 +42,8 @@ public:
 			throw std::out_of_range("out of range matrix index");
 	}
 
-	//// Dinamikusan valtoztatja a matrix meretet megtarva az elemeit
-	//void ResizeAndCopy(const int newSize) {
-	//	// 1. lementjuk a regit
-	//	tempPrintState(values, size, true);
-	//	int** old = values; 
-	//	tempPrintState(old, size, true);
-	//	// 2. toroljuk a jelenlegit
-	//	//Flush();
-	//	// 3. letrehozzuk az ujat a jelenlegin ( newSize )
-	//	values = new int* [newSize];
-	//	for (int i = 0; i < newSize;i++) {
-	//		values[i] = new int[newSize];
-	//		// 4. atmasoljuk a regibol a jelenlegibe az ertekeket
-	//		for (int j = 0; j < newSize;j++)
-	//			// ha az uj/sor oszlopban jarunk akkor default erteket veszunk mivel az az index nemletezik a regiben
-	//			values[i][j] = (i == newSize -1 || j == newSize - 1) ? 0 : old[i][j];	
-	//	}
-	//	// 5. toroljuk a regit ( oldSize )
-	//	for (int i = 0; i < size;i++)
-	//		delete[] old[i];
-	//	delete[] old;
-	//	// 6. noveljuk a meretet
-	//	this->size = newSize;
-	//	tempPrintState(values, newSize, true);
-	//}
-
 	void ResizeAndCopy(const int newSize) {
-		int** temp = NULL;
+		int** temp = nullptr;
 		temp = new int* [newSize];
 		// atmasoljuk a regibol a tempbe az ertekeket
 		for (int i = 0; i < newSize;i++) {
