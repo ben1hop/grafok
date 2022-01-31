@@ -35,15 +35,12 @@ public:
 		std::cout << "------------------------\n";
 	}
 
-
 	void setValue(const int i, const int j, const int v) {
 		if (i < size && j < size && i >= 0 && j >= 0)
 			values[i][j] = v;
 		else
 			throw std::out_of_range("out of range matrix index");
 	}
-
-
 
 	//// Dinamikusan valtoztatja a matrix meretet megtarva az elemeit
 	//void ResizeAndCopy(const int newSize) {
@@ -74,7 +71,7 @@ public:
 	void ResizeAndCopy(const int newSize) {
 		int** temp = NULL;
 		temp = new int* [newSize];
-		// 4. atmasoljuk a regibol a jelenlegibe az ertekeket
+		// atmasoljuk a regibol a tempbe az ertekeket
 		for (int i = 0; i < newSize;i++) {
 			temp[i] = new int[newSize];
 			for (int j = 0; j < newSize;j++)

@@ -5,13 +5,42 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{aa06f14c-0f17-46e4-93f7-0ed645c7a3db}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Graph">
+      <UniqueIdentifier>{efa70e85-ebe6-4fa2-a39b-f13cea1bc425}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graph\Representation">
+      <UniqueIdentifier>{f5602480-a4d5-4a50-a47a-12eb0e795c40}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.hpp">
+      <Filter>Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphAsMatrix.cpp">
+      <Filter>Graph\Representation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LinkedList.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="IGraphOperation.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

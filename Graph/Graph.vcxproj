@@ -140,8 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="IGraphOperation.h" />
+    <ClInclude Include="LinkedList.hpp" />
+    <ClInclude Include="Node.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphAsMatrix.cpp" />
     <ClCompile Include="Matrix.hpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
